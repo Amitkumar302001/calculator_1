@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> <div class="container">
+    <center>
+      <div class="upper">
+          <input type="text" name="" id="display" readonly >
+          <button onclick="del()" id="back">back</button>
+
+      </div>
+        <br />
+    <div class="row">
+        <button onclick="getvalue('7')">7</button>
+      <button onclick="getvalue('8')">8</button>
+      <button onclick="getvalue('9')">9</button>
+      <button onclick="getvalue('/')">/</button>
+      </div>
+      <br />
+      <div class="row">
+        <button onclick="getvalue('6')">6</button>
+      <button onclick="getvalue('5')">5</button>
+      <button onclick="getvalue('4')">4</button>
+      <button onclick="getvalue('*')">x</button>
+      </div>
+      <br />
+      <div class="row">
+        <button onclick="getvalue('1')">1</button>
+      <button onclick="getvalue('2')">2</button>
+      <button onclick="getvalue('3')">3</button>
+      <button onclick="getvalue('-')">-</button>
+      </div>
+      <br />
+      <div class="row">
+          <button onclick="clr()" id="clear">clear</button>
+          <button onclick="getvalue('0')">0</button>
+      <button onclick="getvalue('+')">+</button>
+      <button onclick="get()" id="equal">=</button>
+
+      </div>
+  </center>
+</div>
+<script>
+  function getvalue(x) {
+    let a = (document.getElementById("display").value += x);
+  }
+
+  function get() {
+    let result = eval(document.getElementById("display").value);
+    document.getElementById("display").value = result;
+  }
+
+  function del() {
+    let e = document.getElementById("display").value;
+    let f = e.slice(0, e.length - 1);
+    document.getElementById("display").value = f;
+  }
+
+  function clr() {
+    let g = document.getElementById("display").value;
+    let h = g.replace(g, "");
+    document.getElementById("display").value = h;
+  }
+</script>
+</body>
+</html>
